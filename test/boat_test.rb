@@ -33,14 +33,27 @@ class BoatTest < Minitest::Test
   end
 
 
-    def test_stores_total_hours_rented
-      kayak = Boat.new(:kayak, 20)
+  def test_stores_total_hours_rented
+    kayak = Boat.new(:kayak, 20)
 
-      kayak.add_hour
-      kayak.add_hour
-      kayak.add_hour
+    kayak.add_hour
+    kayak.add_hour
+    kayak.add_hour
 
-      assert_equal 3, kayak.hours_rented
-    end
+    assert_equal 3, kayak.hours_rented
+  end
+
+  def test_can_calc_total_due
+    kayak = Boat.new(:kayak, 20)
+    kayak.add_hour
+    kayak.add_hour
+
+    assert_equal 40, kayak.cost
+
+    kayak.add_hour
+
+    assert_equal 60, kayak.cost
+  end
+
 
 end
