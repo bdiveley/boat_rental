@@ -10,10 +10,12 @@ class Boat
   end
 
   def add_hour
-    @hours_rented += 1
+    if @hours_rented < 3
+      @hours_rented += 1
+    end
   end
 
   def cost
-    @price_per_hour * @hours_rented 
+    @price_per_hour * @hours_rented
   end
 end
