@@ -55,5 +55,16 @@ class BoatTest < Minitest::Test
     assert_equal 60, kayak.cost
   end
 
+  def test_boat_cannot_be_rented_more_than_3_hours
+    kayak = Boat.new(:kayak, 20)
+
+    kayak.add_hour
+    kayak.add_hour
+    kayak.add_hour
+    kayak.add_hour
+    
+   assert_equal 3, kayak.hours_rented
+end
+
 
 end

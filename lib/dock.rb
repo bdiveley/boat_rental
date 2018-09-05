@@ -34,4 +34,5 @@ class Dock
       pair[0].cost
     end
   end
+
 end
